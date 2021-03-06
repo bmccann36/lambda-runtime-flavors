@@ -1,0 +1,34 @@
+apply plugin: 'java'
+
+repositories {
+  jcenter()
+  mavenLocal()
+  mavenCentral()
+}
+
+dependencies {
+  compile (
+          'org.springframework.boot:spring-boot-starter-web:2.2.6.RELEASE',
+          'com.amazonaws.serverless:aws-serverless-java-container-springboot2:[1.0,)',
+          'io.symphonia:lambda-logging:1.0.1'
+  )
+
+  testCompile("junit:junit:4.12")
+}
+
+compileJava   {
+  sourceCompatibility = '11'
+  targetCompatibility = '11'
+}
+
+task buildZip(type: Zip) {
+  from compileJava
+  from processResources
+  into('lib') {
+    from(configurations.compileClasspath) {
+      exclude 'tomcat-embed-*'
+    }
+  }
+}
+
+build.dependsOn buildZip

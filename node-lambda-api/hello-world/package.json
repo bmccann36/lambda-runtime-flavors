@@ -1,0 +1,10 @@
+{
+  "name": "delete-test-01",
+  "description": "delete-test-01-description",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1",
+    "serverless-http": "^2.7.0"
+  }
+}

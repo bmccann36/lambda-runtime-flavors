@@ -1,0 +1,33 @@
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'io.quarkus'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'io.quarkus:quarkus-resteasy'
+
+    implementation 'io.quarkus:quarkus-undertow:1.12.1.Final'
+    implementation 'io.quarkus:quarkus-vertx-web:1.12.1.Final'
+    implementation 'io.quarkus:quarkus-funqy-http:1.12.1.Final'
+    implementation 'io.quarkus:quarkus-amazon-lambda-http' 
+}
+
+group = 'cedrus'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+
+

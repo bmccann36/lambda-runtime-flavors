@@ -1,0 +1,12 @@
+quarkusRest/build/samconfig.toml
+quarkusRest/.idea
+quarkusRest/.gradle
+quarkusRest/gradle
+quarkusRest/quarkusRest.iml
+aws-java-lambda/.aws-sam
+aws-java-lambda/.gradle
+aws-java-lambda/.idea
+aws-java-lambda/gradle
+aws-java-lambda/samconfig.toml
+node-lambda-api/.aws-sam
+node-lambda-api/hello-world/node_modules

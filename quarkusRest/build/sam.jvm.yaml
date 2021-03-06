@@ -1,0 +1,29 @@
+  AWSTemplateFormatVersion: '2010-09-09'
+  Transform: AWS::Serverless-2016-10-31
+  Description: AWS Serverless Quarkus HTTP - quarkusRest-1.0-SNAPSHOT
+  Globals:
+    Api:
+      EndpointConfiguration: REGIONAL
+      BinaryMediaTypes:
+        - "*/*"
+
+  Resources:
+    Quarkusrest:
+      Type: AWS::Serverless::Function
+      Properties:
+        Handler: io.quarkus.amazon.lambda.runtime.QuarkusStreamHandler::handleRequest
+        Runtime: java11
+        CodeUri: function.zip
+        MemorySize: 512
+        Policies: AWSLambdaBasicExecutionRole
+        Timeout: 15
+        Events:
+          HttpApiEvent:
+            Type: HttpApi
+
+  Outputs:
+    QuarkusrestApi:
+      Description: URL for application
+      Value: !Sub 'https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/'
+      Export:
+        Name: QuarkusrestApi

@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  simple-node-api
+  Sample SAM Template for simple-node-api
+
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  ExpressBackend:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: hello-world/
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+      MemorySize: 246
+      Tracing: Active
+      Events:
+        HelloWorld:
+          Type: HttpApi
+          Properties:
+            Path: /{proxy+}
+            Method: get
+
+Outputs:
+  HelloWorldApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value:
+      Fn::Sub: https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/
+  ExpressBackendFunction:
+    Description: Express Backend Lambda Function ARN
+    Value: !Sub ExpressBackend.Arn
+  ExpressBackendIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !Sub ExpressBackendFunctionRole.Arn
