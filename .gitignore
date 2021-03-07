@@ -10,3 +10,7 @@ aws-java-lambda/gradle
 aws-java-lambda/samconfig.toml
 node-lambda-api/.aws-sam
 node-lambda-api/hello-world/node_modules
+quarkusRest/bin
+aws-java-lambda/bin
+aws-java-lambda/.settings
+quarkusRest/.settings

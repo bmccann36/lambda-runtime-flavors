@@ -1,0 +1,19 @@
+
+
+service: java-lambda-latency-test
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  
+plugins:
+  - serverless-dotenv-plugin
+
+functions:
+  hello:
+    handler: handler.hello
+    timeout: 240 # optional, in seconds, default is 6
+    events:
+    - schedule: rate(5 minutes)
