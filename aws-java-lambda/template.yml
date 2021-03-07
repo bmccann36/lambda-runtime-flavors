@@ -9,10 +9,11 @@ Resources:
   MyServiceFunction:
     Type: AWS::Serverless::Function
     Properties:
+      Description: 'spring boot in Lambda java 11 runtime'
       Handler: my.service.StreamLambdaHandler::handleRequest
       Runtime: java11
       CodeUri: .
-      MemorySize: 512
+      MemorySize: 256
       Policies: AWSLambdaBasicExecutionRole
       Timeout: 30
       Events:

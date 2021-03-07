@@ -14,6 +14,9 @@ plugins:
 functions:
   hello:
     handler: handler.hello
-    timeout: 240 # optional, in seconds, default is 6
+    # default is 6, this fn can take a few min to run though so we bump the timeout way up
+    timeout: 240 
+    # optional, in MB, default is 1024
+    memorySize: 256
     events:
     - schedule: rate(5 minutes)

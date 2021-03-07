@@ -13,7 +13,7 @@
 
 ## push an update
 ```bash
-sam deploy --template-file build/sam.jvm.yaml --stack-name quarkus-native --capabilities CAPABILITY_IAM
+sam deploy --template-file build/sam.jvm.yaml --stack-name jvm-quarkus --capabilities CAPABILITY_IAM
 #or
-sam deploy --template-file build/sam.native.yaml --stack-name jvm-quarkus --capabilities CAPABILITY_IAM
+sam deploy --template-file build/sam.native.yaml --stack-name quarkus-native --capabilities CAPABILITY_IAM
 ```

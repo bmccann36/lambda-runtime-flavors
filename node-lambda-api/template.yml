@@ -12,6 +12,7 @@ Resources:
   ExpressBackend:
     Type: AWS::Serverless::Function
     Properties:
+      Description: 'express.js app in Lambda Node runtime'
       CodeUri: hello-world/
       Handler: app.lambdaHandler
       Runtime: nodejs12.x

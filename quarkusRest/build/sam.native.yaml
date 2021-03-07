@@ -11,10 +11,11 @@
     QuarkusrestNative:
       Type: AWS::Serverless::Function
       Properties:
+        Description: 'Quarkus app packaged as native binary, using runtime provided by us'
         Handler: not.used.in.provided.runtimei
         Runtime: provided
         CodeUri: function.zip
-        MemorySize: 128
+        MemorySize: 256
         Policies: AWSLambdaBasicExecutionRole
         Timeout: 15
         Environment:

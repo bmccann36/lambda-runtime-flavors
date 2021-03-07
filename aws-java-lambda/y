@@ -1,0 +1,10 @@
+version = 0.1
+[y]
+[y.deploy]
+[y.deploy.parameters]
+stack_name = "jvm-spring-boot"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-e6ui0w9p4aar"
+s3_prefix = "jvm-spring-boot"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
