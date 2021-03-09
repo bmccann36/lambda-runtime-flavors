@@ -1,4 +1,4 @@
-quarkusRest/build/samconfig.toml
+quarkusRest/build/**
 quarkusRest/.idea
 quarkusRest/.gradle
 quarkusRest/gradle
