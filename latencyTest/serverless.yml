@@ -13,6 +13,7 @@ plugins:
 
 functions:
   hello:
+    description: 'utility to ping http endpoints at an interval' # optional, Description to publish to AWS
     handler: handler.hello
     # default is 6, this fn can take a few min to run though so we bump the timeout way up
     timeout: 240 

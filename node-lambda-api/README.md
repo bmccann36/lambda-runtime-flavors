@@ -11,8 +11,5 @@ it has been simplified even further
 
 ## push an update
 ```bash
-sam deploy \                    
-  --template-file template.yml \
-  --stack-name node-lambda-api \
-  --capabilities CAPABILITY_IAM
+sam deploy --template-file .aws-sam/build/template.yaml --stack-name node-lambda-api --capabilities CAPABILITY_IAM --s3-bucket aws-sam-cli-managed-default-samclisourcebucket-e6ui0w9p4aar
 ```
