@@ -1,3 +1,7 @@
+## PRE REQUISITES
+- aws sam
+- gradle
+- docker 
 
 ## build for regular JVM
 `./gradlew build`
@@ -8,8 +12,21 @@
 ## deploy jvm version
 `sam deploy -t build/sam.jvm.yaml -g`
 
-## deploy jvm version
+## deploy native version
 `sam deploy -t build/sam.native.yaml -g`
+
+## testing out the API
+after deployment is done you'll see this in the terminal
+```
+Outputs                                                                                                        
+------------------------------------------------------------------------------------------
+Key                 QuarkusrestApi                                                                                 
+Description         URL for application                                                                            
+Value               https://<?your_random_id?>.execute-api.us-east-1.amazonaws.com/                                        
+------------------------------------------------------------------------------------------
+```
+
+make a GET request to the outputted URL with /hello added to the end
 
 ## push an update
 ```bash
